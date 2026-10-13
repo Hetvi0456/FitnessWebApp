@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 
 const authRouter = require('./routes/auth');
+const roomsRouter = require('./routes/rooms');
 
 const app = express();
 
@@ -60,5 +61,6 @@ app.get('/api/health', (_req, res) => {
 });
 
 app.use('/api/auth', authRouter);
+app.use('/api/rooms', roomsRouter);
 
 module.exports = app;
