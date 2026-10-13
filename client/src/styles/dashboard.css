@@ -1,0 +1,185 @@
+/* ============================================================
+   dashboard.css — Authenticated dashboard layout
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.dashboard-page {
+  min-height: 100svh;
+  background: #0d0f14;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #e8ecf4;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.dashboard-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.dashboard-brand {
+  font-weight: 700;
+  background: linear-gradient(135deg, #6c63ff, #ff6584);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dashboard-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.dashboard-name {
+  font-size: 0.9rem;
+  color: #c4cad6;
+  font-weight: 500;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #8892a4;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.logout-btn:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+/* ── Main ────────────────────────────────────────────────── */
+.dashboard-main {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-welcome {
+  margin-bottom: 2.5rem;
+}
+
+.dashboard-welcome h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #e8ecf4;
+  margin: 0 0 0.5rem;
+  -webkit-text-fill-color: unset;
+  background: none;
+}
+
+.dashboard-welcome p {
+  color: #8892a4;
+  font-size: 1rem;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.dash-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: default;
+}
+
+.dash-card:hover {
+  border-color: rgba(108, 99, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.dash-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.85rem;
+}
+
+.dash-card h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e8ecf4;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+  -webkit-text-fill-color: unset;
+  background: none;
+}
+
+.dash-card p {
+  font-size: 0.85rem;
+  color: #8892a4;
+  margin-bottom: 1rem;
+}
+
+.coming-soon {
+  display: inline-block;
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  border-radius: 20px;
+  color: #a78bfa;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .dashboard-header {
+    padding: 0 1rem;
+  }
+  .dashboard-name {
+    display: none;
+  }
+  .dashboard-main {
+    padding: 2rem 1rem;
+  }
+}
